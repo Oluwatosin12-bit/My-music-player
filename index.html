@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="music.css">
+    <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Edu+SA+Beginner&family=
+    Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="main">
+        <div class="container box">
+            <div class="music">
+                
+                <!--Music player: this is for everything you see on the front page--> 
+                <div class="music-player">
+                    <!--For the head of the page-->
+                    <div class="header">
+                       <i class="fas fa-music"></i>
+                       <h2>Now Playing</h2>
+                       <i class="fas fa-bars"></i>
+                    </div>
+                  <!--Song details-->
+                  <div class="details">
+                     <img class="track-image" src="music pic.jpg" alt="">
+                     <p class="title"> Song Title</p>
+                     <p class="artiste"> Artiste Name</p>
+                  </div>  
+                 <!--Player Controls-->
+                    <div class="controls">
+                        <div class="song-timer">
+                            <span class="current-time">00:12</span>
+                            <span class="duration-time">04:10</span>
+                        </div>
+                 <!--Song duration-->
+                        <div class="duration">
+                            <input 
+                            type="range" 
+                            class="duration-slider" 
+                            min="0" 
+                            max="100" 
+                            value="0">
+                        </div>
+                 <!--Buttons -Play, next and Previous-->
+                        <div class="buttons">
+                           <button class="previous"> 
+                            <i class="fas fa-step-backward"></i>
+                           </button> 
+                           <button class="play"> 
+                            <i class="fas fa-play"></i>
+                           </button> 
+                           <button class="next"> 
+                            <i class="fas fa-step-forward"></i>
+                           </button> 
+                        </div>
+                        <!--Autoplay-->
+                        <button class="play-all"> 
+                           Play All <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <!--Volume-->
+                        <div class="volume">
+                            <p id="show-volume">50</p>
+                            <i class="fas fa-volume-up" id="volume-icon"></i>
+                            <input 
+                            type="range" 
+                            id="volume" 
+                            min="0" 
+                            max="100" 
+                            value="50">
+                        </div>
+                    </div>
+                </div>
+
+                <!--Play list: this is for the menu bar-->
+                <div class="music-playlist">
+                 <!--Header of the dashboard-->   
+                    <div class="header playlist-header"> 
+                        <i class="fas fa-music"></i>
+                        <h2> Playlist </h2>
+                        <i class="fas fa-times" id="cancel"></i>
+                    </label>  
+                     </div>
+                 <!--Playlist Item-->
+                 <div class="playlist-div">
+                     <div class="playlist">
+                         <!--<ul >
+                         <li> <p class="single-song"> <span class="song-index">1</span> Song one</p> </li>
+                        </ul>-->
+                     </div>
+                 </div>
+                </div>
+             
+
+            </div>
+        </div>
+    </section>
+
+    <script src="musiclibrary.js"></script>
+    <script src="music.js"></script>
+</body>
+
+
+
+<!--
+    differences: major colors- black and pink
+    Use menu bar from your website
+-->

@@ -1,0 +1,327 @@
+/*html{
+    font-size: 10px;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+p{
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}*/
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box
+}
+
+body{
+    background-color: #000000;
+}
+
+.box{
+    width: 65%;
+    height: 65%;
+    /*height: 100vh;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}  
+
+.music{
+    position: relative;
+    background: #FF1493;
+    width:  40%; /*25rem;*/
+    border-radius: 5px;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.header .fas {
+    font-size: 1.6rem;
+}
+.fa-bars{
+    cursor: pointer;
+}
+.header h2{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+/*For the details*/
+.details{
+    margin:  5% 0;/*2rem 0;*/
+    text-align: center;
+}
+.details img{
+    width: 50%;
+    border: 3px solid var(--color-sec);
+    margin-bottom: 1rem;
+}
+.details .artiste{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+}
+
+/*Controls*/
+.controls{
+    background: black;
+    padding: 2rem 1rem;
+    height:  5%; /*220px;*/
+    border-radius: 5rem 5rem 0 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.song-timer{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+/*Range slider*/
+input[type="range"]{
+    appearance: none;
+    width: 50%;
+    outline: none;
+    height: 2px;
+    margin: 0 10%;
+}
+input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background: #FF1493;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.duration input[type="range"]{
+    width: 80%
+}
+/*this is to make the song duration line longer than the volume line*/
+
+/*Buttons*/
+.buttons{
+    text-align: center;
+    margin:  5% auto;/*2rem auto; /*2rem for the top and bottom and auto for the left and right*/
+    width: 60%;
+    padding: 5px 0;
+    background: #b60262;
+    border-radius: 5px;
+}
+.buttons > *{      /*this refers to all the children under buttons*/
+    border: none;
+    outline: none;
+    background: white;
+    padding: 1rem;
+    cursor: pointer;
+    color: var(--color-dark-grey);
+}
+.play{
+    background: black;
+    color: white;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%; 
+}
+
+
+.play-all{
+    display:block;
+    margin: 0 auto; 
+    padding: 3px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+/*Volume*/
+.volume{
+    display: flex;  /*this sets everything in this class in a line in their phone-like box*/
+    justify-content: center;
+    align-items: center;
+    margin: .5rem 0 1rem 0; /*top left bottom right*/
+}
+.volume p{
+    background: #FF1493;
+    color: white;
+    font-size: 1rem;
+    height: 1rem;
+    padding: 0.9px 3px; /*0 top and bottom, 3px left and right*/
+    margin-right: 8px;
+    border-radius: .3rem;
+}
+.volume i{
+    background:  white;
+    color: black;
+    font-size: 1rem;
+    height: 1rem;
+    padding: 0.9px 2px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /*the last two above is to put the icon in the middle of its small personal box*/
+    cursor: pointer;
+    border-radius: .3rem;
+}
+.volume input[type="range"]{
+    margin: 0;
+}
+
+
+
+
+/*Music Playlist - we want to hide it*/
+.music-playlist{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, .9);
+    width: 90%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+}
+
+.playlist-header{
+    color: white; /*to make our header visible from the background*/
+    padding: 5px 0;
+    border-bottom: 1px solid grey; /*the line under the header*/
+    
+}
+.playlist-header .fa-times{
+    cursor: pointer;
+}
+.playlist-div{
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto; /*to make this scrollable to make room for many songs*/
+}
+/*the following below are elements that make the lists scrollable in case of excess*/
+/*Playlist scroll bar*/
+.playlist-div::-webkit-scrollbar{
+    height: 5px;
+    width: 4px;
+    border: 1px solid white;
+    background: white;
+}
+.playlist-div::-webkit-scrollbar-track{
+    --webkit-box-shadow: inset 0 0 6px black 0.3; /* 0.3 is transparency figure*/
+}
+.playlist-div::-webkit-scrollbar-thumb{
+    background-color: var(--color-primary);
+    outline: 1px solid white;
+}
+.playlist{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.song-index{
+    font-size: 1.4rem;
+    margin-right: 5px;
+}
+.playlist p{
+    width: 400%;
+    font-size: 1.2rem;
+    border-bottom: 1px solid grey;
+    padding: 5px 0;
+    cursor: pointer;
+    margin-top: 7px;
+    font-family:  'Edu SA Beginner';
+}
+.playlist p:hover{
+    padding-left: 20px;
+    transition: 0.4s;
+}
+
+
+/* FOR SMALLER DEVICES */
+@media screen and (max-width: 1024px) {
+    .box{
+        width: 100%;
+        height: 100%;
+        /*height: 100vh;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30% auto; /*50px auto;*/
+    }  
+
+    .music{
+        width: 80%;
+        height: 90%;
+    }
+
+    .controls{
+        background: black;
+        padding: 6% 3%; /*2rem 1rem;*/
+        height:  5%; /*220px;*/
+        width: 85%;
+        border-radius: 28% 28% 0 0; /*5rem 5rem 0 0;*/
+        margin-left: 5%; /*20px;*/
+        margin-right: 5%; /*20px;*/
+    }
+
+    .buttons{
+        text-align: center;
+        margin:  5% auto;/*2rem auto; /*2rem for the top and bottom and auto for the left and right*/
+        width: 60%;
+        padding: 5px 0;
+        background: #b60262;
+        border-radius: 5px;
+    }
+    .buttons > *{      /*this refers to all the children under buttons*/
+        border: none;
+        outline: none;
+        background: white;
+        padding: 6%; /*1rem;*/
+        cursor: pointer;
+        color: var(--color-dark-grey);
+    }
+    .play{
+        background: black;
+        color: white;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%; 
+        font-size: 80%;
+    }
+    
+    .previous, .next{
+        font-size: 70%;
+    }
+    
+}
+
+
+
+/* #FF1493 - hot pink */
+
