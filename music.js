@@ -141,6 +141,7 @@ function muteSound(){
 //Change Volume
 function changeVolume(){
         showVolume.value = currentVolume.value; //volume number
+         showVolume.innerHTML = currentVolume.value;
         track.volume = currentVolume.value / 100; //because 100 is the Max length we indicated in our HTML
 } 
 
