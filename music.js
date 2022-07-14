@@ -45,7 +45,7 @@ const play = document.querySelector(".play"),
  next.addEventListener('click', nextSong);
  autoPlayBtn.addEventListener('click', autoPlayToggle);
  volumeIcon.addEventListener('click', muteSound);
- currentVolume.addEventListener('click', changeVolume);
+ currentVolume.addEventListener('change', changeVolume);
  slider.addEventListener('change', changeDuration);
  track.addEventListener('timeupdate', songTimeUpdate);
  hamBurger.addEventListener('click', showPlaylist);
