@@ -106,7 +106,7 @@ const play = document.querySelector(".play"),
 //Prev song 
 function prevSong() {
         if (indexTrack > 0) {
-                indexTrack++;
+                indexTrack--;
                 loadTrack(indexTrack);
                 playSong();
         } else {
